@@ -1,0 +1,15 @@
+
+/* font-family: 'Stalinist One', cursive;
+font-family: 'Exo 2', sans-serif; */
+
+body {
+    font-family: 'Stalinist One', cursive;
+}
+
+.crystal-image {
+    width: 200px;
+    height: 280px;
+    padding: 20 px;
+    float: left;
+} 
+
