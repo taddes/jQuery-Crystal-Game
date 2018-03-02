@@ -1,39 +1,56 @@
+$(document).ready(function() {
+  var randomNum = Math.floor(Math.random() * 102 + 19);
+  console.log(randomNum);
 
+  var cry1 = Math.floor(Math.random() * 12 + 1);
+  var cry2 = Math.floor(Math.random() * 12 + 1);
+  var cry3 = Math.floor(Math.random() * 12 + 1);
+  var cry4 = Math.floor(Math.random() * 12 + 1);
 
-var randomNum = (Math.floor(Math.random() * 102 + 19));
-console.log(randomNum);
+  var counter = 0;
+  var wins = 0;
+  var losses = 0;
 
-var counter = 0;
-var wins = 0;
-var losses = 0;
+  function resetGame() {
+    randomNum = Math.floor(Math.random() * 102 + 19);
 
-$(".random-number").text(randomNum);
+    cry1 = Math.floor(Math.random() * 12 + 1);
+    cry2 = Math.floor(Math.random() * 12 + 1);
+    cry3 = Math.floor(Math.random() * 12 + 1);
+    cry4 = Math.floor(Math.random() * 12 + 1);
+    counter = 0;
+  }
 
-$(".total-score").text(counter);
+  $(".random-number").text(randomNum);
 
-var crystals = $(".crystals");
+  $(".total-score").text(counter);
 
-var crystalImages = ["./assets/images/crys1.png", "./assets/images/crys2.png", "./assets/images/crys3.png", "./assets/images/crys4.png"]
-var crystalOptions =[];
+  $(".winSpan").text(wins);
 
-var cry1 = ((Math.floor(Math.random() * 12 + 1) ) );
-var cry2 = ((Math.floor(Math.random() * 12 + 1) ) );
-var cry3 = ((Math.floor(Math.random() * 12 + 1) ) );
-var cry4 = ((Math.floor(Math.random() * 12 + 1) ) );
+  $(".lossSpan").text(losses);
 
-crystalOptions.push(cry1);
-crystalOptions.push(cry2);
-crystalOptions.push(cry3);
-crystalOptions.push(cry4);
+  var crystals = $(".crystals");
 
-console.log(crystalOptions);
-console.log(cry1);
-console.log(cry2);
-console.log(cry3);
-console.log(cry4);
+  var crystalImages = [
+    "./assets/images/crys1.png",
+    "./assets/images/crys2.png",
+    "./assets/images/crys3.png",
+    "./assets/images/crys4.png"
+  ];
+  var crystalOptions = [];
 
-for (var i = 0; i < crystalOptions.length; i++) {
+  crystalOptions.push(cry1);
+  crystalOptions.push(cry2);
+  crystalOptions.push(cry3);
+  crystalOptions.push(cry4);
 
+  console.log(crystalOptions);
+  console.log(cry1);
+  console.log(cry2);
+  console.log(cry3);
+  console.log(cry4);
+
+  for (var i = 0; i < crystalOptions.length; i++) {
     var crystalImage = $("<img>");
 
     crystalImage.addClass("crystal-image");
@@ -43,44 +60,35 @@ for (var i = 0; i < crystalOptions.length; i++) {
     crystalImage.attr("data-crystalvalue", crystalOptions[i]);
 
     crystals.append(crystalImage);
-}
+  }
 
-crystals.on("click", ".crystal-image", function() {
-
-
-    var crystalValue = ($(this).attr("data-crystalvalue"));
+  crystals.on("click", ".crystal-image", function() {
+    var crystalValue = $(this).attr("data-crystalvalue");
     crystalValue = parseInt(crystalValue);
 
     counter += crystalValue;
 
     if (counter === randomNum) {
-        wins++;
-        alert("WIN");
+      wins++;
+      $(".winSpan").text(wins);
+      resetGame();
+    } else if (counter >= randomNum) {
+      losses++;
+      $(".lossSpan").text(losses);
+      resetGame();
     }
 
-    else if (counter >= randomNum) {
-        losses++;
-        alert("LOSE");
-    } 
-
     $(".total-score").text(counter);
-
+  });
 });
-
-
-
 
 // var crystalNum = (Math.floor(Math.random() * 12 + 1));
 // console.log(crystalNum);
 
-
-
 // var userNumber = 0;
 // $(".totalScore").text(userNumber);
 
-
-
-//crystal 1 
+//crystal 1
 // $(".crystals").on("click", ".crys1", function() {
 //     userNumber += cry1;
 //     alert(userNumber);
@@ -94,7 +102,7 @@ crystals.on("click", ".crystal-image", function() {
 // //crystal 3
 // $(".crystals").on("click", ".crys3", function(){
 //     userNumber += cry3;
-    
+
 // });
 
 // //crystal 4
@@ -102,10 +110,6 @@ crystals.on("click", ".crystal-image", function() {
 //     userNumber += cry4;
 
 // });
-
-
-
-
 
 // var crystalChoices;
 
@@ -116,5 +120,3 @@ crystals.on("click", ".crystal-image", function() {
 
 // var losses = 0;
 // var wins = 0;
-
-
