@@ -77,7 +77,7 @@ $(document).ready(function() {
       $(".lossSpan").text(losses);
       resetGame();
     }
-
+    $(".random-number").text(randomNum);
     $(".total-score").text(counter);
   });
 });
