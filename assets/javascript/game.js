@@ -7,6 +7,13 @@ $(document).ready(function() {
   var cry3 = Math.floor(Math.random() * 12 + 1);
   var cry4 = Math.floor(Math.random() * 12 + 1);
 
+  var crystalOptions = [];
+
+  crystalOptions.push(cry1);
+  crystalOptions.push(cry2);
+  crystalOptions.push(cry3);
+  crystalOptions.push(cry4);
+
   var counter = 0;
   var wins = 0;
   var losses = 0;
@@ -19,6 +26,8 @@ $(document).ready(function() {
     cry3 = Math.floor(Math.random() * 12 + 1);
     cry4 = Math.floor(Math.random() * 12 + 1);
     counter = 0;
+    crystalOptions = [cry1, cry2, cry3, cry4];
+    crystalRegen();
   }
 
   $(".random-number").text(randomNum);
@@ -37,12 +46,7 @@ $(document).ready(function() {
     "./assets/images/crys3.png",
     "./assets/images/crys4.png"
   ];
-  var crystalOptions = [];
-
-  crystalOptions.push(cry1);
-  crystalOptions.push(cry2);
-  crystalOptions.push(cry3);
-  crystalOptions.push(cry4);
+ 
 
   console.log(crystalOptions);
   console.log(cry1);
@@ -50,6 +54,8 @@ $(document).ready(function() {
   console.log(cry3);
   console.log(cry4);
 
+  function crystalRegen() {
+    crystals.html("");
   for (var i = 0; i < crystalOptions.length; i++) {
     var crystalImage = $("<img>");
 
@@ -61,6 +67,8 @@ $(document).ready(function() {
 
     crystals.append(crystalImage);
   }
+}
+  crystalRegen();
 
   crystals.on("click", ".crystal-image", function() {
     var crystalValue = $(this).attr("data-crystalvalue");
@@ -82,41 +90,3 @@ $(document).ready(function() {
   });
 });
 
-// var crystalNum = (Math.floor(Math.random() * 12 + 1));
-// console.log(crystalNum);
-
-// var userNumber = 0;
-// $(".totalScore").text(userNumber);
-
-//crystal 1
-// $(".crystals").on("click", ".crys1", function() {
-//     userNumber += cry1;
-//     alert(userNumber);
-// });
-
-// //crystal 2
-// $(".crystals").on("click", ".crys2", function(){
-//     userNumber += cry2;
-// });
-
-// //crystal 3
-// $(".crystals").on("click", ".crys3", function(){
-//     userNumber += cry3;
-
-// });
-
-// //crystal 4
-// $(".crystals").on("click", ".crys4", function(){
-//     userNumber += cry4;
-
-// });
-
-// var crystalChoices;
-
-// var crys1Counter = 0;
-// var crys2Counter = 0;
-// var crys3Counter = 0;
-// var crys4Counter = 0;
-
-// var losses = 0;
-// var wins = 0;
