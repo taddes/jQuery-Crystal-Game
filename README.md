@@ -1,5 +1,5 @@
 # jQuery Crystal Game
-
+![Crystals](/assets/images/crystals.png)
 jQuery and JavaScript guessing game.
 <hr>
 **Instructions:
@@ -22,3 +22,5 @@ The game restarts whenever the player wins or loses. Wins and losses are tracked
 Every time the game starts over, the crystal values and random number change.
 
 <hr>
+
+![Crystals](/assets/images/scottyMeme.jpg)
