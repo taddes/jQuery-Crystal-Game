@@ -1,6 +1,8 @@
 # jQuery Crystal Game
-![Crystals](/assets/images/crystals.png)
+
 jQuery and JavaScript guessing game.
+![Crystals](/assets/images/crystals.png)
+
 <hr>
 **Instructions:
 
