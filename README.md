@@ -2,7 +2,7 @@
 
 jQuery and JavaScript guessing game.
 <hr>
-**Instructions:**
+**Instructions:
 
 There will be four crystals displayed as buttons on the page.
 
