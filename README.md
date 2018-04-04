@@ -1,2 +1,3 @@
-# week-4-game
-jQuery Crystal Game
+# jQuery Crystal Game
+
+jQuery and JavaScript guessing game.
