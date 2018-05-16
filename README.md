@@ -1,10 +1,11 @@
 # jQuery Crystal Game
 
-jQuery and JavaScript guessing game.
+<h2>jQuery and JavaScript guessing game.</h2>
+<br>
 ![Crystals](/assets/images/crystals.png)
 
 <hr>
-**Instructions:
+**Instructions:**
 
 There will be four crystals displayed as buttons on the page.
 
