@@ -18,7 +18,7 @@ When the player does click one, the score counter is updated.
 The goal is to find the values of the crystals and add them up to the random number without going past it.
 The player wins if their total score matches the random number from the beginning of the game.
 
-The player loses if their score goes above the random number.
+The player loses if their score goes above the random number that is displayed.
 
 The game restarts whenever the player wins or loses. Wins and losses are tracked in a counter.
 
